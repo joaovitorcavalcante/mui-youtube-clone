@@ -1,9 +1,9 @@
-import { Box, Toolbar, Typography } from "@material-ui/core";
-import { ReactElement } from "react";
+import { Box, Toolbar, Typography, Grid } from "@material-ui/core";
+import { ReactNode } from "react";
 
 type VideoListProps = {
   title: string;
-  children: ReactElement;
+  children: ReactNode;
 };
 
 export function VideoList({ title, children }: VideoListProps) {
@@ -15,7 +15,9 @@ export function VideoList({ title, children }: VideoListProps) {
         {title}
       </Typography>
 
-      {children}
+      <Grid container spacing={2}>
+        {children}
+      </Grid>
     </Box>
   );
 }
